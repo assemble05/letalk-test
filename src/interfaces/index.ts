@@ -4,6 +4,18 @@ export interface IInputProps {
   placeholder: string;
   register: any;
   registerName: string;
+  type ?: string
+}
+export interface IInputMask {
+  value?: string;
+  register?: any;
+  label: string;
+  placeholder?: string;
+  isTextarea?: boolean;
+  size?: string;
+  error_status?: boolean;
+  error?: any;
+  mask: any;
 }
 
 export interface IProviderProps {
@@ -30,6 +42,7 @@ export interface UserContextType {
   loanData: any;
   requestInstallment : IInstallmentPropsProvider
   confirmInstallmentFunction : () => void;
+  loanSucessToast : boolean
   }
 
   export interface IInstallmentProps {

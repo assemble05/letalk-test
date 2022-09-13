@@ -6,16 +6,30 @@
   align-items: center;
   height: fit-content;
 }
+input{
+  width: 90vw;
+  max-width: 904px;
+  height: 25px;
+  font-size: 18px;
+  padding: 18px 0px 17px 21px;
+  border-radius: 6px;
+  border-color: 1px  #d4d4d4;
+  border-style: double;
+  margin-bottom:  13px;
+}
+
 h4{
   font-size: 20px;
   font-weight: 700;
 }
+
 h1 {
   font-size: 50px;
   font-weight: 300;
   color: #8f99a6;
   margin-top: 100px;
 }
+
 h6{
   font-size: 20px;
   font-weight: 700;
