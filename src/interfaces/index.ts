@@ -14,11 +14,11 @@ export interface ILoanData {
   cpf: string;
   uf: string;
   birth_date: string;
-  value: string;
-  portion: string;
+  value: number;
+  portion: number;
 }
 
 
 export interface UserContextType {
-    loanData: Function;
+  loanData: any;
   }

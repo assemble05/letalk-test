@@ -1,7 +1,9 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { LoanContext } from "../../providers/loanProvider";
+import api from "../../services/api";
 import { loanSchema } from "../../validations/inputSchemaValidator";
 import Input from "../input/input";
 import StyledForm from "./styledForm";
@@ -13,10 +15,12 @@ const LoanForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(loanSchema) });
 
+  
   const { loanData } = useContext(LoanContext);
 
-  const onSubmitFunction = handleSubmit((data) => {
-    loanData(data);
+  const onSubmitFunction =  handleSubmit ((data) => {
+    
+    loanData({data})
   });
   return (
     <StyledForm onSubmit={onSubmitFunction}>
