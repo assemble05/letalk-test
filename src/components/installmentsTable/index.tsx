@@ -4,66 +4,14 @@ import InstallmentCard from "../installmentsCard";
 import InstallmentsDetails from "../installmentsDetailsCard";
 import { Container, TableStyle, WrapperDiv } from "./installmentStyle";
 
-const a = [
-  {
-    debit_value: "R$ 90.000,00",
-    fees: "R$ 900,00",
-    debt: "R$ 90.900,00",
-    installment: "R$ 15.000,00",
-    month: "9/22",
-  },
-  {
-    debit_value: "R$ 90.000,00",
-    fees: "R$ 1900,00",
-    debt: "R$ 90.900,00",
-    installment: "R$ 15.000,00",
-    month: "9/22",
-  },
-  {
-    debit_value: "R$ 90.000,00",
-    fees: "R$ 1900,00",
-    debt: "R$ 90.900,00",
-    installment: "R$ 15.000,00",
-    month: "9/22",
-  },
-  {
-    debit_value: "R$ 90.000,00",
-    fees: "R$ 1900,00",
-    debt: "R$ 90.900,00",
-    installment: "R$ 15.000,00",
-    month: "9/22",
-  },
-  {
-    debit_value: "R$ 90.000,00",
-    fees: "R$ 1900,00",
-    debt: "R$ 90.900,00",
-    installment: "R$ 15.000,00",
-    month: "9/22",
-  },
-  {
-    debit_value: "R$ 90.000,00",
-    fees: "R$ 1900,00",
-    debt: "R$ 90.900,00",
-    installment: "R$ 15.000,00",
-    month: "9/22",
-  },
-  {
-    debit_value: "R$ 90.000,00",
-    fees: "R$ 1900,00",
-    debt: "R$ 90.900,00",
-    installment: "R$ 15.000,00",
-    month: "9/22",
-  },
-];
-
-
 const InstallmentTable = () => {
 
-    const {requestInstallment} = useContext(LoanContext)
+    const {requestInstallment,confirmInstallmentFunction} = useContext(LoanContext)
 
     const {required_value,fessPerMonth,amountPeerMonth,monthToPay,fees,totalToPay, installments} = requestInstallment
-  return (
-    <WrapperDiv>
+    if(installments){
+    return (
+     <WrapperDiv>
     <Container>
     <div className="organize_element-table">
         <InstallmentsDetails value={required_value} name={"VALOR REQUERIDO:"}/>
@@ -104,8 +52,14 @@ const InstallmentTable = () => {
       </tbody>
 
           </TableStyle>
-    </WrapperDiv>
-  );
+          <button onClick={() => confirmInstallmentFunction()}>EFETIVAR EMPRÉSTIMO</button>
+    </WrapperDiv>)
+           }
+        
+          return(<span></span>)
+
+        
+  ;
 };
 
 export default InstallmentTable;
