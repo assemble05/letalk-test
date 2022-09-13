@@ -18,7 +18,35 @@ export interface ILoanData {
   portion: number;
 }
 
+interface IInstalments{
+  debit_value: string;
+  fees: string; 
+  debt: string; 
+  installment: string; 
+  month: string;
 
+}
 export interface UserContextType {
   loanData: any;
+  requestInstallment : IInstallmentPropsProvider
+  }
+
+  export interface IInstallmentProps {
+    debit_value:string;
+    fees:string;
+    debt:string;
+    installment:string;
+     month:string;
+  }
+
+  export interface IInstallmentPropsProvider {
+      cpf: string,
+      fees: string,
+      monthToPay: string,
+      required_value: string,
+      fessPerMonth: string,
+      amountPeerMonth: string,
+      totalToPay: string;
+      installments : IInstalments[]
+  
   }
