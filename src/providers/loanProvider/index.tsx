@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { ILoanData, IProviderProps, UserContextType } from "../../interfaces";
 import api from "../../services/api";
-import axios from "axios"
+
 export const LoanContext = createContext<UserContextType>({} as UserContextType);
 
 const LoanProvider = ({ children }: IProviderProps) => {

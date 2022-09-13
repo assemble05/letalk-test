@@ -1,9 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { LoanContext } from "../../providers/loanProvider";
-import api from "../../services/api";
 import { loanSchema } from "../../validations/inputSchemaValidator";
 import Input from "../input/input";
 import StyledForm from "./styledForm";
