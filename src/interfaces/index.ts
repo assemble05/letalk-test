@@ -1,6 +1,24 @@
-export interface IInputProps {
- placeholder : string;
- register: any;
- registerName : string;
+import { ReactNode } from "react";
 
+export interface IInputProps {
+  placeholder: string;
+  register: any;
+  registerName: string;
 }
+
+export interface IProviderProps {
+  children: ReactNode;
+}
+
+export interface ILoanData {
+  cpf: string;
+  uf: string;
+  birth_date: string;
+  value: number;
+  portion: number;
+}
+
+
+export interface UserContextType {
+  loanData: any;
+  }
