@@ -13,15 +13,14 @@ const LoanForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(loanSchema) });
 
-  
   const { loanData } = useContext(LoanContext);
 
-  const onSubmitFunction =  handleSubmit ((data) => {
-    
-    loanData({data})
+  const onSubmitFunction = handleSubmit((data) => {
+    loanData({ data });
   });
   return (
     <StyledForm onSubmit={onSubmitFunction}>
+
       <Input placeholder="CPF" registerName="cpf" register={register} />
       <Input placeholder="UF" registerName="uf" register={register} />
       <Input

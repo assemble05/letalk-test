@@ -29,6 +29,7 @@ interface IInstalments{
 export interface UserContextType {
   loanData: any;
   requestInstallment : IInstallmentPropsProvider
+  confirmInstallmentFunction : () => void;
   }
 
   export interface IInstallmentProps {
@@ -49,4 +50,8 @@ export interface UserContextType {
       totalToPay: string;
       installments : IInstalments[]
   
+  }
+
+  export interface InterfaceConfirmUserDatas {
+    data : ILoanData
   }
