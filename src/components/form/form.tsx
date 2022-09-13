@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { LoanContext } from "../../providers/loanProvider";
 import { loanSchema } from "../../validations/inputSchemaValidator";
 import Input from "../input/input";
+import InputWithMask from "../input/inputWithMask";
 import StyledForm from "./styledForm";
 
 const LoanForm = () => {
@@ -20,23 +21,36 @@ const LoanForm = () => {
   });
   return (
     <StyledForm onSubmit={onSubmitFunction}>
-
-      <Input placeholder="CPF" registerName="cpf" register={register} />
-      <Input placeholder="UF" registerName="uf" register={register} />
-      <Input
-        placeholder="DATA DE NASCIMENTO"
-        registerName="birth_date"
+      <InputWithMask
+        value="cpf"
         register={register}
+        placeholder={"CPF"}
+        label={"CPF"}
+        error_status={!!errors.cpf?.message}
+        error={errors.cpf?.message}
+        mask="999.999.999-99"
+      />
+
+      <Input placeholder="UF" registerName="uf" register={register} type="text"/>
+
+      <InputWithMask
+        value="birth_date"
+        register={register}
+        placeholder={"DATA DE NASCIMENTO"}
+        label={"birth_date"}
+        mask="99-99-9999"
       />
       <Input
         placeholder="QUAL O VALOR DO EMPRÉSTIMO"
         registerName="value"
         register={register}
+        type="number"
       />
       <Input
         placeholder="QUAL VALOR DESEJA PAGAR POR MÊS"
         registerName="portion"
         register={register}
+        type="number"
       />
       <button type="submit">SIMULAR</button>
     </StyledForm>
